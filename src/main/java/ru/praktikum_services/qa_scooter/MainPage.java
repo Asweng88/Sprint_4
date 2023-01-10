@@ -42,11 +42,8 @@ public class MainPage {
         switch (buttonName){
             case "upperButtonOrder":
                 return upperButtonOrder;
-            case "lowerButtonOrder":
-                return lowerButtonOrder;
             default:
-                System.out.println("Кнопка не определена");
-                return null;
+                return lowerButtonOrder;
         }
     }
 
@@ -58,14 +55,11 @@ public class MainPage {
                 ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();",buttons);
                 ExpectedConditions.elementToBeClickable(buttons);
                 return this;
-            case "lowerButtonOrder":
+            default:
                 buttons = webDriver.findElement(lowerButtonOrder);
                 ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();",buttons);
                 ExpectedConditions.elementToBeClickable(buttons);
                 return this;
-            default:
-                System.out.println("Кнопка не определена");
-                return null;
         }
     }
 
@@ -74,11 +68,8 @@ public class MainPage {
             case "upperButtonOrder":
                webDriver.findElement(upperButtonOrder).click();
                break;
-            case "lowerButtonOrder":
-                webDriver.findElement(lowerButtonOrder).click();
-                break;
             default:
-                System.out.println("Кнопка не определена");
+                webDriver.findElement(lowerButtonOrder).click();
         }
     }
 

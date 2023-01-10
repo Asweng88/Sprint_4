@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Stream;
 
 public class OrderPage {
 
@@ -103,6 +105,8 @@ public class OrderPage {
         ExpectedConditions.elementToBeClickable(station.get(p));
         station.get(p).click();
     }
+
+
 
     public void selectRentalPeriodList(String rentalPeriod) {
         int p = 0;
